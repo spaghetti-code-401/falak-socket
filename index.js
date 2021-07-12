@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
     // get receiver socketId
     const user = getUser(receiverId);
     // if other user is not connected, we need the below condition
-    console.log('WILL SEND MSG :::::::::::::::::')
+    console.table(users)
     user && io.to(user.socketId).emit('getMessage', {
       senderId,
       text
