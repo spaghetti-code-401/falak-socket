@@ -1,0 +1,24 @@
+{
+  "name": "chat-social",
+  "version": "1.0.0",
+  "description": "socket stuff",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliBakerSartawi/chat-social.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AliBakerSartawi/chat-social/issues"
+  },
+  "homepage": "https://github.com/AliBakerSartawi/chat-social#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "socket.io": "^4.1.2"
+  }
+}
