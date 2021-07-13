@@ -38,8 +38,21 @@ io.on('connection', (socket) => {
     // get receiver socketId
     const user = getUser(receiverId);
     // if other user is not connected, we need the below condition
-    console.table(users)
-    user && io.to(user.socketId).emit('getMessage', {
+    console.table(users);
+    user &&
+      io.to(user.socketId).emit('getMessage', {
+        senderId,
+        text
+      });
+  });
+
+  // send and get code
+  socket.on('sendCode', ({ senderId, receiverId, text }) => {
+    // get receiver socketId
+    const user = getUser(receiverId);
+    // if other user is not connected, we need the below condition
+    console.log(text);
+    user && io.to(user.socketId).emit('getCode', {
       senderId,
       text
     });
@@ -54,4 +67,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(process.env.PORT, () => console.log(`SOCKET RUNNING ON ${process.env.PORT}`))
+server.listen(process.env.PORT, () =>
+  console.log(`SOCKET RUNNING ON ${process.env.PORT}`)
+);
